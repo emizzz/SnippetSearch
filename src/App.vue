@@ -1,28 +1,52 @@
+<!-- 
+
+TODO: 
+  - notify for limit request
+  
+settings: 
+  - mininum number of char to consider it a snippet
+  - theme: light dark
+  - set number of pages
+  - show question titles
+
+MORE:
+  - favorite snippets feature
+  - vs code addon?
+  - infinite scroll?
+  
+
+citations:
+  -stackoverflow
+
+-->
+
+
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Home />
+
+    <!-- TODO -->
+    <Notify />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/Home.vue'
+import Notify from './commons/Notify'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Home,
+    Notify
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import './assets/styles/custom.scss';
+  @import 'node_modules/bootstrap/scss/bootstrap';
+  @import 'node_modules/bootstrap-vue/src/index.scss';
+
+  body{background: $primary;}
 </style>
